@@ -28,8 +28,9 @@ def about():
 
 @app.route('/profile/')
 def profile():
-    today = format_date_joined()
-    return render_template('profile.html', name=today)
+
+    now = date.today().strftime('%m/%d')
+    return render_template('profile.html', name=now)
 
 
 ###
