@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="container">
+  <div class="card" style="width:500px">
+    <img class="card-img-bottom" alt="background"  src="{{ url_for('static', filename="back.png") }}"  style="width:100%;height:350px;">
+    <div class="card-img-overlay">
+    <img  src="{{ url_for('static', filename="me.jpg") }}" alt="photo of me" style="width:35%;height:27%;border-radius:75px;transform:rotate(270deg);margin-left:35%;margin-top:5%">
+    <h4 class="card-title text-center text-success">Jason Williams</h4>
+    <p class="text-dark text-center">@webMaster </p>
+    <p class="text-dark font-weight-bold text-center">Kingston Jamaica </p>
+    {{ name }}
+    <!--<p class="text-dark font-weight-bold text-center">Joined February, 2020 </p>-->
+    </div>
+    <div class="card-body">
+      <p class="card-text text-center">I am the programmer of my code.
+		HTML is my body, and Javascript is my blood.
+		I have created over a thousand Websites.
+		Unknown to run, nor known to glitch.
+		Have withstood pain to create many apps.
+		Yet, those apps will never hold anything.
+
+		So, as I pray...Unlimited Code Works.</p>
+        <div class="d-flex justify-content-around font-weight-bolder ">
+        <p>50 </p>
+        <p>200 </p>
+        <p>350 </p>
+        </div>
+        <div class="d-flex justify-content-around text-secondary font-weight-light">
+        <p>Posts </p>
+        <p>Following </p>
+        <p>Followers </p>
+        </div>
+      <div class="text-center">
+      <a href="#" class="btn btn-primary ">Follow</a>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+
+{% endblock %}

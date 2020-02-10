@@ -7,6 +7,7 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime import date
 
 
 ###
@@ -22,7 +23,13 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Jason Williams")
+
+
+@app.route('/profile/')
+def profile():
+    today = format_date_joined()
+    return render_template('profile.html', name=today)
 
 
 ###
@@ -35,6 +42,16 @@ def send_text_file(file_name):
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
 
+
+def format_date_joined():
+    today = date.today()
+    fdate = date.today().strftime('%d/%m/%Y')
+    print("Today's current date is -", today)
+    print("Date in dd/mm/YYYY format -", fdate)
+
+    """now = datetime.datetime.now()  # today's date
+    date_joined = datetime.date(2020, 2, 8)  # a specific date
+    print("Joined" + date_joined.strftime("%B, %Y"))"""
 
 @app.after_request
 def add_header(response):
